@@ -1,0 +1,23 @@
+extends layout
+
+block content
+
+	#cats
+		each cat, i in cats
+			div(value = cat)
+				p #{cat.name} is #{cat.age} years old and has #{cat.color} fur.
+
+	#new-cat
+		form(method='post', action='/cats/new')
+			label(for='name') Name:
+			input(type='text', name='name', id='name')
+			label(for='age') Age:
+			input(type='text', name='age', id='age')
+			label(for='color') Color:
+			select(name='color')
+				option(value='') -- Select Color --
+				option(value='tabby') Tabby
+				option(value='calico') Calico
+				option(value='tortoiseshell') Tortoiseshell
+				option(value='tuxedo') Tuxedo
+			input(type="submit", value='Submit')

@@ -1,0 +1,8 @@
+extends layout
+
+block content
+
+	#cats
+		each cat, i in cats
+			div(value = cat)
+				p #{cat.name} is #{cat.age} years old and has #{cat.color} fur.
